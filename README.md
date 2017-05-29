@@ -6,9 +6,9 @@ Aftership
 * Credentials: apiKey
 
 ## How to get credentials: 
-0. Item one 
-1. Item two 
-
+0. Go to [Aftership](http://aftership.com)
+1. Register or log in
+2. Go to [Aftership API](https://secure.aftership.com/#/settings/api) page to get your apiKey
 
 
 ## Custom datatypes: 
