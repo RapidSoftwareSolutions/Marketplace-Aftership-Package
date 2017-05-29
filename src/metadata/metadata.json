@@ -1,0 +1,1177 @@
+{
+  "package": "Aftership",
+  "tagline": "Aftership API",
+  "description": "Aftership",
+  "image": "http:\/\/logo.clearbit.com\/aftership.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Aftership-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "aftership.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getActivatedCouriers",
+      "description": "Return a list of couriers activated at your AfterShip account.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAllCouriers",
+      "description": "Return a list of all couriers.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "detectCouriers",
+      "description": "Return a list of matched couriers based on tracking number format and selected couriers or a list of couriers.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number of a shipment.",
+          "required": true
+        },
+        {
+          "name": "trackingPostalCode",
+          "type": "String",
+          "info": "The postal code of receiver's address. Required by some couriers, such asdeutsch-post",
+          "required": false
+        },
+        {
+          "name": "trackingShippingDate",
+          "type": "DatePicker",
+          "info": "Shipping date in YYYYMMDD format. Required by some couriers, such as deutsch-post",
+          "required": false
+        },
+        {
+          "name": "trackingAccountNumber",
+          "type": "String",
+          "info": "Account number of the shipper for a specific courier. Required by some couriers, such as dynamic-logistics",
+          "required": false
+        },
+        {
+          "name": "trackingKey",
+          "type": "String",
+          "info": "Key of the shipment for a specific courier. Required by some couriers, such as sic-teliway",
+          "required": false
+        },
+        {
+          "name": "trackingDestinationCountry",
+          "type": "String",
+          "info": "Destination Country of the shipment for a specific courier. Required by some couriers, such as postnl-3s",
+          "required": false
+        },
+        {
+          "name": "slug",
+          "type": "List",
+          "info": "If not specified, Aftership will automatically detect the courier based on the tracking number format and your selected couriers. Use array to input a list of couriers for auto detect.",
+          "required": false,
+          "structure": {
+            "name": "slug",
+            "type": "String",
+            "info": "Single slug"
+          }
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createTracking",
+      "description": "Create a tracking",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number of a shipment.",
+          "required": true
+        },
+        {
+          "name": "trackingPostalCode",
+          "type": "String",
+          "info": "The postal code of receiver's address. Required by some couriers, such asdeutsch-post",
+          "required": false
+        },
+        {
+          "name": "trackingShippingDate",
+          "type": "DatePicker",
+          "info": "Shipping date in YYYYMMDD format. Required by some couriers, such as deutsch-post",
+          "required": false
+        },
+        {
+          "name": "trackingAccountNumber",
+          "type": "String",
+          "info": "Account number of the shipper for a specific courier. Required by some couriers, such as dynamic-logistics",
+          "required": false
+        },
+        {
+          "name": "trackingKey",
+          "type": "String",
+          "info": "Key of the shipment for a specific courier. Required by some couriers, such as sic-teliway",
+          "required": false
+        },
+        {
+          "name": "trackingDestinationCountry",
+          "type": "String",
+          "info": "Destination Country of the shipment for a specific courier. Required by some couriers, such as postnl-3s",
+          "required": false
+        },
+        {
+          "name": "slug",
+          "type": "List",
+          "info": "If not specified, Aftership will automatically detect the courier based on the tracking number format and your selected couriers. Use array to input a list of couriers for auto detect.",
+          "required": false,
+          "structure": {
+            "name": "slug",
+            "type": "String",
+            "info": "Single slug"
+          }
+        },
+        {
+          "name": "android",
+          "type": "List",
+          "info": "Google cloud message registration IDs to receive the push notifications.",
+          "required": false,
+          "structure": {
+            "name": "android",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "ios",
+          "type": "List",
+          "info": "Apple iOS device IDs to receive the push notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "info": "Title of the tracking. Default value as tracking_number",
+          "required": false
+        },
+        {
+          "name": "customerName",
+          "type": "String",
+          "info": "Customer name of the tracking.",
+          "required": false
+        },
+        {
+          "name": "destinationCountryIso3",
+          "type": "String",
+          "info": "Enter ISO Alpha-3(three letters)to specify the destination of the shipment. If you use postal service to send international shipments, AfterShip will automatically get tracking results at destination courier as well (e.g. USPS for USA).",
+          "required": false
+        },
+        {
+          "name": "orderId",
+          "type": "String",
+          "info": "Text field for order ID",
+          "required": false
+        },
+        {
+          "name": "orderIdPath",
+          "type": "String",
+          "info": "Text field for order path",
+          "required": false
+        },
+        {
+          "name": "customFields",
+          "type": "String",
+          "info": "Custom fields that accept any text string",
+          "required": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "Text field for the note",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTrackingResults",
+      "description": "Return a list of all couriers.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page to show. (Default: 1)",
+          "required": false
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Number of trackings each page contain. (Default: 100, Max: 200)",
+          "required": false
+        },
+        {
+          "name": "keyword",
+          "type": "String",
+          "info": "Search the content of the tracking record fields",
+          "required": false
+        },
+        {
+          "name": "slug",
+          "type": "List",
+          "info": "Unique courier code Use array for multiple values",
+          "required": false,
+          "structure": {
+            "name": "slug",
+            "type": "String",
+            "info": "Slug"
+          }
+        },
+        {
+          "name": "deliveryTime",
+          "type": "Number",
+          "info": "Total delivery time in days. - Difference of 1st checkpoint time and delivered time for delivered shipments - Difference of 1st checkpoint time and current time for non-delivered shipments Value as 0 for pending shipments or delivered shipment with only one checkpoint.",
+          "required": false
+        },
+        {
+          "name": "origin",
+          "type": "List",
+          "info": "Origin country of trackings. Use ISO Alpha-3 (three letters). Use array for multiple values.",
+          "required": false,
+          "structure": {
+            "name": "origin",
+            "type": "String",
+            "info": "Origin"
+          }
+        },
+        {
+          "name": "destination",
+          "type": "List",
+          "info": "Destination country of trackings. Use ISO Alpha-3 (three letters). Use array for multiple values.",
+          "required": false,
+          "structure": {
+            "name": "destination",
+            "type": "String",
+            "info": "Destination"
+          }
+        },
+        {
+          "name": "tag",
+          "type": "Select",
+          "options": [
+            "Pending",
+            "InfoReceived",
+            "InTransit",
+            "OutForDelivery",
+            "AttemptFail",
+            "Delivered",
+            "Exception",
+            "Expired"
+          ],
+          "info": "Current status of tracking. Values include: Pending,  InfoReceived,  InTransit,  OutForDelivery,  AttemptFail,  Delivered,  Exception,  Expired",
+          "required": false
+        },
+        {
+          "name": "createdAtMin",
+          "type": "DatePicker",
+          "info": "Start date and time of trackings created. AfterShip only stores data of 90 days.(Defaults: 30 days ago, Example: 2013-03-15T16:41:56+08:00)",
+          "required": false
+        },
+        {
+          "name": "createdAtMax",
+          "type": "DatePicker",
+          "info": "End date and time of trackings created. AfterShip only stores data of 90 days.(Defaults: 30 days ago, Example: 2013-03-15T16:41:56+08:00)",
+          "required": false
+        },
+        {
+          "name": "fields",
+          "type": "List",
+          "info": "Unique courier code Use array for multiple values. Fields to include: title,  order_id,  tag,  checkpoints,  checkpoint_time,  message,  country_name",
+          "required": false,
+          "structure": {
+            "name": "fields",
+            "type": "String",
+            "info": "Fields"
+          }
+        },
+        {
+          "name": "lang",
+          "type": "String",
+          "info": "Default: '' / Example: 'en' Support Chinese to English translation for  china-ems  and  china-post  only",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTrackingResultById",
+      "description": "Get tracking results of a single tracking by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "ID of the tracking in the system",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "List",
+          "info": "Unique courier code Use array for multiple values. Fields to include: tracking_postal_code,tracking_ship_date,tracking_account_number,tracking_key,tracking_destination_country,title,order_id,tag,checkpoints, checkpoint_time, message, country_name",
+          "required": false,
+          "structure": {
+            "name": "field",
+            "type": "String",
+            "info": "Field"
+          }
+        },
+        {
+          "name": "lang",
+          "type": "String",
+          "info": "Default: '' / Example: 'en' Support Chinese to English translation for  china-ems  and  china-post  only",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTrackingResultByTrackingNumber",
+      "description": "Get tracking results of a single tracking by tracking number",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "List",
+          "info": "Unique courier code Use array for multiple values. Fields to include: tracking_postal_code,tracking_ship_date,tracking_account_number,tracking_key,tracking_destination_country,title,order_id,tag,checkpoints, checkpoint_time, message, country_name",
+          "required": false,
+          "structure": {
+            "name": "field",
+            "type": "String",
+            "info": "Field"
+          }
+        },
+        {
+          "name": "lang",
+          "type": "String",
+          "info": "Default: '' / Example: 'en' Support Chinese to English translation for  china-ems  and  china-post  only",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateTrackingById",
+      "description": "Update a tracking by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "info": "Title of the tracking. Default value as tracking_number",
+          "required": false
+        },
+        {
+          "name": "customerName",
+          "type": "String",
+          "info": "Customer name of the tracking.",
+          "required": false
+        },
+        {
+          "name": "orderId",
+          "type": "String",
+          "info": "Text field for order ID",
+          "required": false
+        },
+        {
+          "name": "orderIdPath",
+          "type": "String",
+          "info": "Text field for order path",
+          "required": false
+        },
+        {
+          "name": "customFields",
+          "type": "String",
+          "info": "Custom fields that accept any text string",
+          "required": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "Text field for the note",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateTrackingByTrackingNumber",
+      "description": "Update a tracking by tracking number",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "info": "Title of the tracking. Default value as tracking_number",
+          "required": false
+        },
+        {
+          "name": "customerName",
+          "type": "String",
+          "info": "Customer name of the tracking.",
+          "required": false
+        },
+        {
+          "name": "orderId",
+          "type": "String",
+          "info": "Text field for order ID",
+          "required": false
+        },
+        {
+          "name": "orderIdPath",
+          "type": "String",
+          "info": "Text field for order path",
+          "required": false
+        },
+        {
+          "name": "customFields",
+          "type": "String",
+          "info": "Custom fields that accept any text string",
+          "required": false
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "Text field for the note",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "retrackExpiredTrackingById",
+      "description": "Retrack an expired tracking by system id. Max 3 times per tracking.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "retrackExpiredTrackingByTrackingNumber",
+      "description": "Retrack an expired tracking by tracking number. Max 3 times per tracking.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "retrackExpiredTrackingById",
+      "description": "Delete tracking by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteTrackingByTrackingNumber",
+      "description": "Delete tracking by tracking number.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLastCheckpointTrackingInfoById",
+      "description": "Return the tracking information of the last checkpoint of a single tracking. by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "ID of the tracking in the system",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "List",
+          "info": "List of fields to include in the response. Fields to include: slug,created_at,checkpoint_time,city,coordinates,country_iso3, country_name,message,state,tag,zip",
+          "required": false,
+          "structure": {
+            "name": "field",
+            "type": "String",
+            "info": "Field"
+          }
+        },
+        {
+          "name": "lang",
+          "type": "String",
+          "info": "Default: '' / Example: 'en' Support Chinese to English translation for  china-ems  and  china-post  only",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLastCheckpointTrackingInfoByTrackingNumber",
+      "description": "Return the tracking information of the last checkpoint of a single tracking. by tracking number",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "type": "List",
+          "info": "List of fields to include in the response. Use array for multiple values. Fields to include: Fields to include: slug,created_at,checkpoint_time,city,coordinates,country_iso3, country_name,message,state,tag,zip",
+          "required": false,
+          "structure": {
+            "name": "field",
+            "type": "String",
+            "info": "Field"
+          }
+        },
+        {
+          "name": "lang",
+          "type": "String",
+          "info": "Default: '' / Example: 'en' Support Chinese to English translation for  china-ems  and  china-post  only",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUserContactInfoToNotifyByTrackingNumber",
+      "description": "Get contact information for the users to notify when the tracking changes. Please note that only customer receivers will be returned. Any email, sms or webhook that belongs to the Store will not be returned.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUserContactInfoToNotifyById",
+      "description": "Get contact information for the users to notify when the tracking changes. Please note that only customer receivers will be returned. Any email, sms or webhook that belongs to the Store will not be returned.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addTrackingNumberNotificationById",
+      "description": "Add a tracking notification by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addTrackingNumberNotificationByTrackingNumber",
+      "description": "Add a tracking notification by tracking number",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "removeTrackingNumberNotificationById",
+      "description": "Remove a tracking notification by system id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingId",
+          "type": "String",
+          "info": "System tracking id",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "removeTrackingNumberNotificationByTrackingNumber",
+      "description": "Remove a tracking notification by tracking number",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key you received from Aftership",
+          "required": true
+        },
+        {
+          "name": "trackingNumber",
+          "type": "String",
+          "info": "Tracking number",
+          "required": true
+        },
+        {
+          "name": "slug",
+          "type": "String",
+          "info": "Tracking slug",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "type": "List",
+          "info": "Email address(es) to receive email notifications.",
+          "required": false,
+          "structure": {
+            "name": "ios",
+            "type": "String",
+            "info": "Single id"
+          }
+        },
+        {
+          "name": "smses",
+          "type": "List",
+          "info": "Phone number(s) to receive sms notifications. Enter + and area code before phone number.",
+          "required": false,
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          }
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
