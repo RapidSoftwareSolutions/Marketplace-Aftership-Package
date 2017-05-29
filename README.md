@@ -8,13 +8,15 @@ Aftership
 ## How to get credentials: 
 0. Go to [Aftership](http://aftership.com)
 1. Register or log in
-2. Go to [Aftership API page](https://secure.aftership.com/#/settings/api) to get your apiKey
+2. Go to [Aftership API](https://secure.aftership.com/#/settings/api) page to get your apiKey
 
 ## Custom datatypes: 
-Datepicker - String which includes date and time 
-Map - String which includes latitude and longitude coma separated
-List - Simple array
-Select - String with predefined values
+ |Datatype|Description|Example|
+ |Datepicker|String which includes date and time|2016-05-28 00:00:00|
+ |Map|String which includes latitude and longitude coma separated|50,26|
+ |List|Simple array|["123, "sample"]|
+ |Select|String with predefined values|sample|
+ 
 
 ## Aftership.getActivatedCouriers
 Return a list of couriers activated at your AfterShip account.
