@@ -14,7 +14,7 @@ Aftership
 ## Custom datatypes: 
  |Datatype|Description|Example
  |--------|-----------|----------
- |Datepicker|String which includes date and time|2016-05-28 00:00:00
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
  |Map|String which includes latitude and longitude coma separated|50,26
  |List|Simple array|["123, "sample"]
  |Select|String with predefined values|sample
