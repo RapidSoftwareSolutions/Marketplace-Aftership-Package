@@ -742,7 +742,7 @@
       ]
     },
     {
-      "name": "retrackExpiredTrackingById",
+      "name": "deleteTrackingByTrackingID",
       "description": "Delete tracking by system id",
       "args": [
         {

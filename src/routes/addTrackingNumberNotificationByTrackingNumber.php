@@ -25,9 +25,10 @@ $app->post('/api/Aftership/addTrackingNumberNotificationByTrackingNumber', funct
     //requesting remote API
     $client = new GuzzleHttp\Client();
 
+
     try {
 
-        $resp = $client->request('PUT', $query_str, [
+        $resp = $client->request('POST', $query_str, [
             'headers' => [
                 'aftership-api-key' => $post_data['args']['apiKey']
             ],

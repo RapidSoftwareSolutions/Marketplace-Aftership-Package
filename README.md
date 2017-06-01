@@ -164,7 +164,7 @@ Retrack an expired tracking by tracking number. Max 3 times per tracking.
 | trackingNumber| String     | Tracking number
 | slug          | String     | Tracking slug
 
-## Aftership.retrackExpiredTrackingById
+## Aftership.deleteTrackingById
 Delete tracking by system id
 
 | Field     | Type       | Description

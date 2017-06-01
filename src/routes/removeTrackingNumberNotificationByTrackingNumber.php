@@ -27,7 +27,7 @@ $app->post('/api/Aftership/removeTrackingNumberNotificationByTrackingNumber', fu
 
     try {
 
-        $resp = $client->request('PUT', $query_str, [
+        $resp = $client->request('POST', $query_str, [
             'headers' => [
                 'aftership-api-key' => $post_data['args']['apiKey']
             ],
